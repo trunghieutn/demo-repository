@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+class Animal{
+public:
+	virtual void sound(){
+		cout << "some sound"<< endl;
+	}
+};
+
+class Cat: public Animal{
+public:	
+	void sound(){
+		cout << "meow meow" << endl;
+	}
+	void play(){
+		cout << "Cat is playing " << endl;
+	}
+};
+
+class Dog: public Animal{
+public:
+	void sound(){
+		cout << "woof woof " << endl;
+	}
+};
+
+//int main(){
+//	Cat cat;
+//	Animal *animal1 = &cat;
+//	animal1->sound();
+//	
+//	Dog dog;
+//	Animal *animal2 = &dog;
+//	animal2->sound();
+//	return 0;
+//}
+
+int main(){
+	Animal animal;
+	Cat *cat = (Cat*)&animal;
+	
+	cat->sound();
+	cat->play();
+	
+	return 0;
+}
